@@ -2,25 +2,23 @@
 
 #include "core/memory.h"
 
-static u8 main_ram[MAIN_RAM_SIZE];
-
-void memory_init(void)
+void memory_init(Memory *memory)
 {
-    memset(main_ram, 0, sizeof(main_ram));
+    memset(memory->main_ram, 0, sizeof(memory->main_ram));
 }
 
-u8 memory_read8(u32 addr)
+u8 memory_read8(Memory *memory, u32 addr)
 {
-    if (addr >= MAIN_RAM_SIZE)
+    if (addr >= sizeof(memory->main_ram))
         return 0;
 
-    return main_ram[addr];
+    return memory->main_ram[addr];
 }
 
-void memory_write8(u32 addr, u8 value)
+void memory_write8(Memory *memory, u32 addr, u8 value)
 {
-    if (addr >= MAIN_RAM_SIZE)
+    if (addr >= sizeof(memory->main_ram))
         return;
 
-    main_ram[addr] = value;
+    memory->main_ram[addr] = value;
 }
