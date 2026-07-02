@@ -1,0 +1,14 @@
+#ifndef ARM_CPU_H
+#define ARM_CPU_H
+
+#include <stdint.h>
+
+typedef struct
+{
+    uint32_t r[16];
+    uint32_t cpsr;
+} ARMCPU;
+
+void arm_cpu_reset(ARMCPU *cpu);
+
+#endif
