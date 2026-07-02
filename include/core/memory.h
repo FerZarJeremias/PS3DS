@@ -3,14 +3,11 @@
 
 #include "core/types.h"
 
-typedef struct
-{
-    u8 *ram;
+#define MAIN_RAM_SIZE (4 * 1024 * 1024)
 
-} memory_t;
+void memory_init(void);
 
-int memory_init(memory_t *memory);
-
-void memory_shutdown(memory_t *memory);
+u8 memory_read8(u32 addr);
+void memory_write8(u32 addr, u8 value);
 
 #endif
