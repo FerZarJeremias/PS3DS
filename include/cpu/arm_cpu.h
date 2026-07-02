@@ -14,4 +14,6 @@ typedef struct
 
 void arm_cpu_reset(ARMCPU *cpu);
 
+void arm_cpu_step(ARMCPU *cpu);
+
 #endif
