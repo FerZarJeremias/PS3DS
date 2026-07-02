@@ -1,0 +1,9 @@
+# Ejecutables de pruebas
+test_memory
+test_cpu
+
+# Objetos
+*.o
+
+# Archivos temporales
+*.tmp
