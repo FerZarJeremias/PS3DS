@@ -1,14 +1,19 @@
 #include <stdio.h>
 
 #include "core/memory.h"
+#include "core/bus.h"
 
 int main(void)
 {
-    memory_init();
+    Memory memory;
+    Bus bus;
 
-    memory_write8(10, 42);
+    memory_init(&memory);
+    bus_init(&bus, &memory);
 
-    printf("%u\n", memory_read8(10));
+    bus_write8(&bus, 0, 42);
+
+    printf("%u\n", bus_read8(&bus, 0));
 
     return 0;
 }
