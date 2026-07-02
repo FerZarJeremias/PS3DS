@@ -8,3 +8,8 @@ void arm_cpu_reset(ARMCPU *cpu)
 
     cpu->r[15] = 0;
 }
+
+void arm_cpu_step(ARMCPU *cpu)
+{
+    cpu->r[15] += 4;
+}
