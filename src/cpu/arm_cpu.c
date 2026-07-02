@@ -5,4 +5,6 @@
 void arm_cpu_reset(ARMCPU *cpu)
 {
     memset(cpu, 0, sizeof(ARMCPU));
+
+    cpu->r[15] = 0;
 }
