@@ -1,17 +1,16 @@
 #include "core/bus.h"
-#include "core/memory.h"
 
-void bus_init(void)
+void bus_init(Bus *bus, Memory *memory)
 {
-    memory_init();
+    bus->memory = memory;
 }
 
-u8 bus_read8(u32 addr)
+u8 bus_read8(Bus *bus, u32 addr)
 {
-    return memory_read8(addr);
+    return memory_read8(bus->memory, addr);
 }
 
-void bus_write8(u32 addr, u8 value)
+void bus_write8(Bus *bus, u32 addr, u8 value)
 {
-    memory_write8(addr, value);
+    memory_write8(bus->memory, addr, value);
 }
