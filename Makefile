@@ -2,6 +2,8 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Iinclude
 
+all: memory_test cpu_test
+
 memory_test:
 	$(CC) $(CFLAGS) tests/test_memory.c src/core/memory.c -o test_memory
 
