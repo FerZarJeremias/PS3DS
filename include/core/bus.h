@@ -2,10 +2,16 @@
 #define BUS_H
 
 #include "core/types.h"
+#include "core/memory.h"
 
-void bus_init(void);
+typedef struct
+{
+    Memory *memory;
+} Bus;
 
-u8 bus_read8(u32 addr);
-void bus_write8(u32 addr, u8 value);
+void bus_init(Bus *bus, Memory *memory);
+
+u8 bus_read8(Bus *bus, u32 addr);
+void bus_write8(Bus *bus, u32 addr, u8 value);
 
 #endif
