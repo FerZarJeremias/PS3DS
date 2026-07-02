@@ -2,10 +2,11 @@
 #define NDS_H
 
 #include <stdint.h>
+#include "core/types.h"
 
 typedef struct
 {
-    int initialized;
+    u8 initialized;
 } nds_t;
 
 int nds_init(nds_t *nds);
