@@ -13,3 +13,8 @@ void arm_cpu_step(ARMCPU *cpu)
 {
     cpu->r[15] += 4;
 }
+
+void arm_cpu_connect_bus(ARMCPU *cpu, Bus *bus)
+{
+    cpu->bus = bus;
+}
