@@ -16,3 +16,11 @@ u8 memory_read8(u32 addr)
 
     return main_ram[addr];
 }
+
+void memory_write8(u32 addr, u8 value)
+{
+    if (addr >= MAIN_RAM_SIZE)
+        return;
+
+    main_ram[addr] = value;
+}
