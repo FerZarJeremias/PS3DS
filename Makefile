@@ -2,14 +2,11 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Iinclude
 
-TEST_SRC = \
-	tests/test_memory.c \
-	src/core/memory.c
+memory_test:
+	$(CC) $(CFLAGS) tests/test_memory.c src/core/memory.c -o test_memory
 
-TARGET = test_memory
-
-all:
-	$(CC) $(CFLAGS) $(TEST_SRC) -o $(TARGET)
+cpu_test:
+	$(CC) $(CFLAGS) tests/test_cpu.c src/cpu/arm_cpu.c -o test_cpu
 
 clean:
-	rm -f $(TARGET)
+	rm -f test_memory test_cpu
